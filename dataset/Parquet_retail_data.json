@@ -1,0 +1,21 @@
+{
+	"name": "Parquet_retail_data",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_mystracctdb",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "retail.parquet",
+				"folderPath": "bronze/retail",
+				"fileSystem": "source"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	}
+}
