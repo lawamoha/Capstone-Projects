@@ -1,5 +1,5 @@
 🚀 Azure Data Engineer | Transforming Data into Intelligence
-Welcome to my Azure Data Engineering portfolio! I'm passionate about building scalable, efficient, and reliable data solutions on Microsoft Azure. This repository showcases my journey through various data engineering projects—from simple ETL pipelines to complex cloud architectures.
+Welcome to my Azure Data Engineering portfolio! I'm passionate about building scalable, efficient, and reliable data solutions on Microsoft Azure. This and my other repositories showcases my journey through various data engineering projects—from simple ETL pipelines to complex cloud architectures.
 
 📂 Project Portfolio
 🏗️ Enterprise Data Warehouse & ETL Pipeline
