@@ -2,6 +2,17 @@
 A comprehensive Azure data engineering project demonstrating modern data processing patterns. This pipeline ingests web data, processes it through bronze-silver-gold layers, and delivers actionable insights through Power BI dashboards.
 
 
-
+🏗️ Architecture Overview
 <img width="1200" height="627" alt="image" src="https://github.com/user-attachments/assets/5b76d3e5-a5ca-47e7-9a82-ad2be57f9a5e" />
+
+Dashboard Components:
+
+Revenue trend analysis
+
+Customer behavior insights
+
+Category performance
+
+Interactive filters and drill-through
+
 
