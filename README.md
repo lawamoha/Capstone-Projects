@@ -30,7 +30,7 @@ Achievements: 99.8% data quality score across critical business metrics
 Cloud Technologies
 Azure Data Services: Data Factory, Synapse Analytics, Databricks, Data Lake Storage, SQL Database, Cosmos DB
 
-Data Processing: PySpark, SQL, Python, Scala, T-SQL
+Data Processing: PySpark, SQL, Python, T-SQL
 
 Orchestration: ADF, Azure Functions, Logic Apps
 
