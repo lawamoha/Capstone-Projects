@@ -9,3 +9,11 @@ Tech Stack: Azure Data Factory, Azure Synapse Analytics, Azure Data Lake Storage
 Key Features: Incremental data loading, dimensional modeling, automated monitoring
 
 Achievements: 60% reduction in data processing time, implemented Type 2 SCD
+
+🌐 Data Lake & Medallion Architecture Implementation
+Tech Stack: Delta Lake, Azure Databricks, Azure Data Factory, PySpark
+Modern data lake implementation using medallion architecture
+
+Key Features: Bronze/Silver/Gold layers, data quality frameworks, unified analytics
+
+Achievements: Centralized 15+ data sources into single source of truth
