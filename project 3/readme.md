@@ -1,5 +1,6 @@
 <img width="1511" height="717" alt="image" src="https://github.com/user-attachments/assets/87b10ee4-ea7a-4142-8a12-2f3476fcdbb0" />
 
+
 **Azure Data Engineering Project:** Multi-Source Data Pipeline with Medallion Architecture
 **Project Overview**
 This project implements a robust data engineering pipeline on Azure that ingests data from two different sources (Web API and SQL Database), processes it using the Medallion Architecture, and delivers curated data for Power BI visualization and KPI insights.
@@ -47,8 +48,8 @@ Ready for consumption by BI tools
 
 **Azure SQL Database:** Source system
 
-**Web API: **External data source
-**
+****Web API:**** **External data source
+****
 Project Structure**
 text
 project/
@@ -84,14 +85,14 @@ project/
 **Data Quality:** Automated checks and alerting for data anomalies
 
 **Analytics & Visualization**
-Pre-aggregated Metrics: Business KPIs ready for visualization
+**Pre-aggregated Metrics:** Business KPIs ready for visualization
 
-Power BI Integration: Direct connection to Databricks SQL tables
+**Power BI Integration:** Direct connection to Databricks SQL tables
 
-Real-time Insights: Near real-time data updates for dashboards
+**Real-time Insights:** Near real-time data updates for dashboards
 
-Setup & Configuration
-Prerequisites
+**Setup & Configuration**
+**Prerequisites**
 Azure Subscription with appropriate permissions
 
 Databricks Workspace
@@ -102,7 +103,7 @@ Azure SQL Database
 
 API credentials for web data source
 
-Environment Setup
+**Environment Setup**
 Clone the repository to your Databricks workspace
 
 Configure environment variables in config/environment_variables.json
@@ -111,7 +112,7 @@ Set up linked services in Azure Data Factory
 
 Configure Power BI data source connections
 
-Pipeline Execution
+**Pipeline Execution**
 The main data pipeline is orchestrated through Azure Data Factory and can be triggered:
 
 On a schedule (daily/hourly)
@@ -120,7 +121,7 @@ Event-based triggers
 
 Manual execution for testing
 
-Delta Table Structure
+**Delta Table Structure**
 Silver Layer Tables
 silver.customers_delta - Cleaned data
 
@@ -135,7 +136,7 @@ gold.sales_aggregations_delta - Daily/weekly/monthly sales summaries
 
 gold.product_performance_delta - Product sales and performance indicators
 
-Power BI Integration
+**Power BI Integration**
 Connection Setup
 Databricks SQL Warehouse: Configured for optimal query performance
 
@@ -143,14 +144,15 @@ Direct Query Mode: Real-time data access for Power BI reports
 
 Scheduled Refreshes: Automated data updates based on business requirements
 
-Key Dashboards
+**Key Dashboards**
 Sales Performance: Revenue trends and regional performance
 
 Customer Analytics: Customer segmentation and behavior insights
 
 Product Intelligence: Sales patterns and inventory optimization
 
-Monitoring & Maintenance
+**Monitoring & Maintenance**
+
 Data Quality Monitoring
 Automated data validation checks
 
@@ -158,18 +160,11 @@ Alerting for data pipeline failures
 
 Performance monitoring of Delta tables
 
-Performance Optimization
+**Performance Optimization**
+
 Delta table optimization (Z-ordering, compaction)
 
 Partitioning strategies for large datasets
 
 Query performance tuning for Power BI
 
-Contributing
-Please read the contributing guidelines before submitting pull requests or issues.
-
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-Contact
-For questions or support regarding this data engineering project, please contact the data engineering team.
