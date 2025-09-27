@@ -1,22 +1,20 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "Ds_Salesltproducts_Avro",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "LS_TO_COPY_HIV_DATA_INTO_ADLS",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Parquet",
+		"type": "Avro",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
-				"fileSystem": "source"
-			},
-			"compressionCodec": "snappy"
+				"fileName": "salesltproducts.avro",
+				"fileSystem": "landing"
+			}
 		},
-		"schema": []
+		"schema": {}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

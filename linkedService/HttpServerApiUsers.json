@@ -1,12 +1,13 @@
 {
-	"name": "ls_git_retail_data",
+	"name": "HttpServerApiUsers",
 	"type": "Microsoft.DataFactory/factories/linkedservices",
 	"properties": {
+		"description": "https://reqres.in/api/users",
 		"annotations": [],
 		"type": "HttpServer",
 		"typeProperties": {
-			"url": "https://raw.githubusercontent.com/",
-			"enableServerCertificateValidation": true,
+			"url": "https://reqres.in/api/users",
+			"enableServerCertificateValidation": false,
 			"authenticationType": "Anonymous"
 		}
 	}

@@ -1,0 +1,222 @@
+{
+	"name": "pp_copy_tsv_gz_to_orc",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy_from_tsv_to_orc",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "OrcSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "OrcWriteSettings"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "indic_de,geo\\time",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "indic_de_geo_time",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2008 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2008",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2009 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2009",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2010 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2010",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2011 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2011 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2012 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2012 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2013 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2013 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2014 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2014 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2015 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2015 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2016 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2016 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2017 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2017",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2018 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2018 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "2019 ",
+									"type": "String",
+									"physicalType": "String"
+								},
+								"sink": {
+									"name": "2019 ",
+									"type": "String",
+									"physicalType": "String"
+								}
+							}
+						],
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_blob_tsv",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_population_orc",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"folder": {
+			"name": "DE_bootcamp"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-06-28T17:22:53Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

@@ -1,8 +1,8 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "ds_desserts4all_clean_silver",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "ls_sacproject9",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,11 +10,11 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
-				"fileSystem": "source"
+				"fileName": "cleaned_desserts4all.parquet",
+				"folderPath": "sales",
+				"fileSystem": "silver"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": "none"
 		},
 		"schema": []
 	},

@@ -1,20 +1,22 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "ds_adf_dataset_unzipped",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "ADLS linked service",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Parquet",
+		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
+				"folderPath": "landing",
 				"fileSystem": "source"
 			},
-			"compressionCodec": "snappy"
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
 		},
 		"schema": []
 	},

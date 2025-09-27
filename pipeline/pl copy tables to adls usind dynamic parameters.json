@@ -1,0 +1,92 @@
+{
+	"name": "pl copy tables to adls usind dynamic parameters",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy tables using dynamic parameters",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "AzureSqlSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobStorageWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "ds_dynamic_tables",
+						"type": "DatasetReference",
+						"parameters": {
+							"Table_Name": {
+								"value": "@pipeline().parameters.Table_Name",
+								"type": "Expression"
+							},
+							"Schema_Name": {
+								"value": "@pipeline().parameters.Schema_Name",
+								"type": "Expression"
+							}
+						}
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "ds_saleslt_dynamic_copy",
+						"type": "DatasetReference",
+						"parameters": {
+							"File_Name": {
+								"value": "@concat(pipeline().parameters.File_Name,'-',utcNow(),'.csv')",
+								"type": "Expression"
+							}
+						}
+					}
+				]
+			}
+		],
+		"parameters": {
+			"Table_Name": {
+				"type": "string"
+			},
+			"File_Name": {
+				"type": "string"
+			},
+			"Schema_Name": {
+				"type": "string"
+			}
+		},
+		"folder": {
+			"name": "pipeline_tutorial"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-07-14T22:09:10Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

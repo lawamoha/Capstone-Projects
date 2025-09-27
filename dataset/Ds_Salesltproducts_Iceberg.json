@@ -1,20 +1,18 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "Ds_Salesltproducts_Iceberg",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Parquet",
+		"type": "Iceberg",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
-				"fileSystem": "source"
-			},
-			"compressionCodec": "snappy"
+				"folderPath": "json-files",
+				"fileSystem": "synapse"
+			}
 		},
 		"schema": []
 	},

@@ -1,22 +1,20 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "Ds_Salesltproducts_Orc",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "LS_TO_COPY_HIV_DATA_INTO_ADLS",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Parquet",
+		"type": "Orc",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
-				"fileSystem": "source"
+				"fileName": "salesltproducts.orc",
+				"fileSystem": "landing"
 			},
-			"compressionCodec": "snappy"
-		},
-		"schema": []
+			"enablePhysicalSchema": true
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

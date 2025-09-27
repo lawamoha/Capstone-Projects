@@ -1,0 +1,81 @@
+{
+	"name": "ds_adls_pop_by_age",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_TO_COPY_HIV_DATA_INTO_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "rawfile.tsv",
+				"fileSystem": "landing"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "indic_de",
+				"type": "String"
+			},
+			{
+				"name": "geo\\time",
+				"type": "String"
+			},
+			{
+				"name": "2008 ",
+				"type": "String"
+			},
+			{
+				"name": "2009 ",
+				"type": "String"
+			},
+			{
+				"name": "2010 ",
+				"type": "String"
+			},
+			{
+				"name": "2011 ",
+				"type": "String"
+			},
+			{
+				"name": "2012 ",
+				"type": "String"
+			},
+			{
+				"name": "2013 ",
+				"type": "String"
+			},
+			{
+				"name": "2014 ",
+				"type": "String"
+			},
+			{
+				"name": "2015 ",
+				"type": "String"
+			},
+			{
+				"name": "2016 ",
+				"type": "String"
+			},
+			{
+				"name": "2017 ",
+				"type": "String"
+			},
+			{
+				"name": "2018 ",
+				"type": "String"
+			},
+			{
+				"name": "2019 ",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

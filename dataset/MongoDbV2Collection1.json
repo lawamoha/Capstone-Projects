@@ -1,0 +1,19 @@
+{
+	"name": "MongoDbV2Collection1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "MongoDb1",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "datasets1"
+		},
+		"annotations": [],
+		"type": "MongoDbV2Collection",
+		"schema": [],
+		"typeProperties": {
+			"collection": "anscombe_data"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

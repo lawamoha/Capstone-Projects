@@ -1,8 +1,8 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "ds_parquet_handycandy",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "ADLS linked service",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,9 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
-				"fileSystem": "source"
+				"fileName": "handycandy.parquet",
+				"fileSystem": "parquet-staging"
 			},
 			"compressionCodec": "snappy"
 		},

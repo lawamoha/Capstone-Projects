@@ -1,0 +1,50 @@
+{
+	"name": "ds_sql_sales_xlsx_sales_table",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_asqldb_dbebootcamp1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "RowId",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "Retailer",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SalesMonth",
+				"type": "date"
+			},
+			{
+				"name": "Product",
+				"type": "nvarchar"
+			},
+			{
+				"name": "ManufacturerProductCode",
+				"type": "nvarchar"
+			},
+			{
+				"name": "SalesValueUSD",
+				"type": "decimal",
+				"precision": 18,
+				"scale": 2
+			},
+			{
+				"name": "UnitsSold",
+				"type": "int",
+				"precision": 10
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "Sales_LOAD"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,22 @@
+{
+	"name": "ds_population_orc",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_TO_COPY_HIV_DATA_INTO_ADLS",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Orc",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileName": "population_by_age",
+				"folderPath": "ORC",
+				"fileSystem": "landing"
+			},
+			"orcCompressionCodec": null,
+			"enablePhysicalSchema": true
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

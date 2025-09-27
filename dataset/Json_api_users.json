@@ -1,16 +1,15 @@
 {
-	"name": "Js_retail_data",
+	"name": "Json_api_users",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_git_retail_data",
+			"referenceName": "HttpServerApiUsers",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
 			"location": {
-				"type": "HttpServerLocation",
-				"relativeUrl": "sqlguru007/Azure-Data-Engineering/refs/heads/main/datasets/rawdatafromapi.json"
+				"type": "HttpServerLocation"
 			}
 		},
 		"schema": {}

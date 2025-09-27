@@ -1,8 +1,8 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "ds_dessert4all_parquet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "ls_sacproject9",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,11 +10,10 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
-				"fileSystem": "source"
+				"fileName": "desserts4all.parquet",
+				"fileSystem": "bronze"
 			},
-			"compressionCodec": "snappy"
+			"compressionCodec": "none"
 		},
 		"schema": []
 	},

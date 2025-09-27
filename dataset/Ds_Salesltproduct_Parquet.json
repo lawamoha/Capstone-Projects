@@ -1,8 +1,8 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "Ds_Salesltproduct_Parquet",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "LS_TO_COPY_HIV_DATA_INTO_ADLS",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
@@ -10,9 +10,8 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
-				"fileSystem": "source"
+				"fileName": "salesltproducts.parquet",
+				"fileSystem": "landing"
 			},
 			"compressionCodec": "snappy"
 		},

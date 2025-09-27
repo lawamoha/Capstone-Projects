@@ -1,0 +1,55 @@
+{
+	"name": "Bronze to Silver",
+	"properties": {
+		"type": "MappingDataFlow",
+		"typeProperties": {
+			"sources": [
+				{
+					"dataset": {
+						"referenceName": "ds_dessert4all_parquet",
+						"type": "DatasetReference"
+					},
+					"name": "Desserts4allParquet"
+				}
+			],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "ds_desserts4all_clean_silver",
+						"type": "DatasetReference"
+					},
+					"name": "Destination"
+				}
+			],
+			"transformations": [
+				{
+					"name": "DerivedColumn"
+				}
+			],
+			"scriptLines": [
+				"source(output(",
+				"          SalesMonth as string,",
+				"          Retailer as string,",
+				"          Product as string,",
+				"          SalesValueUSD as float,",
+				"          UnitsSold as integer",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false,",
+				"     format: 'parquet') ~> Desserts4allParquet",
+				"Desserts4allParquet derive(Revenue = SalesValueUSD*UnitsSold) ~> DerivedColumn",
+				"DerivedColumn sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     format: 'parquet',",
+				"     partitionFileNames:['cleaned_desserts4all.parquet'],",
+				"     umask: 0022,",
+				"     preCommands: [],",
+				"     postCommands: [],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> Destination"
+			]
+		}
+	}
+}

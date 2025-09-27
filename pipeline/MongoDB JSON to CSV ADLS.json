@@ -1,10 +1,12 @@
 {
-	"name": "pl_ingest_retail",
+	"name": "MongoDB JSON to CSV ADLS",
 	"properties": {
 		"activities": [
 			{
-				"name": "copy retail data to parquet",
+				"name": "CopyJsonFromMongoDBToAdls",
 				"type": "Copy",
+				"state": "Inactive",
+				"onInactiveMarkAs": "Succeeded",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -16,42 +18,41 @@
 				"userProperties": [],
 				"typeProperties": {
 					"source": {
-						"type": "JsonSource",
-						"storeSettings": {
-							"type": "HttpReadSettings",
-							"requestMethod": "GET"
-						},
-						"formatSettings": {
-							"type": "JsonReadSettings"
-						}
+						"type": "MongoDbV2Source",
+						"batchSize": 100
 					},
 					"sink": {
-						"type": "ParquetSink",
+						"type": "DelimitedTextSink",
 						"storeSettings": {
 							"type": "AzureBlobFSWriteSettings"
 						},
 						"formatSettings": {
-							"type": "ParquetWriteSettings"
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
 						}
 					},
 					"enableStaging": false
 				},
 				"inputs": [
 					{
-						"referenceName": "Js_retail_data",
+						"referenceName": "MongoDbV2Collection1",
 						"type": "DatasetReference"
 					}
 				],
 				"outputs": [
 					{
-						"referenceName": "Parquet_retail_data",
+						"referenceName": "DelimitedText1",
 						"type": "DatasetReference"
 					}
 				]
 			}
 		],
+		"folder": {
+			"name": "pipeline_tutorial"
+		},
 		"annotations": [],
-		"lastPublishTime": "2025-09-21T20:00:47Z"
+		"lastPublishTime": "2025-06-28T17:22:53Z"
 	},
 	"type": "Microsoft.DataFactory/factories/pipelines"
 }

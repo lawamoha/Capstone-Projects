@@ -1,22 +1,19 @@
 {
-	"name": "Parquet_retail_data",
+	"name": "SourceDataset_xit",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "ls_mystracctdb",
+			"referenceName": "ADLS linked service",
 			"type": "LinkedServiceReference"
 		},
 		"annotations": [],
-		"type": "Parquet",
+		"type": "Binary",
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobFSLocation",
-				"fileName": "retail.parquet",
-				"folderPath": "bronze/retail",
+				"folderPath": "landing/Azure-Data-Factory-datasets/Azure-Data-Factory-by-Example-Second-Edition-main/SampleData/Desserts4All",
 				"fileSystem": "source"
-			},
-			"compressionCodec": "snappy"
-		},
-		"schema": []
+			}
+		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
 }

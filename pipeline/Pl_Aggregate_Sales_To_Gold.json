@@ -1,0 +1,44 @@
+{
+	"name": "Pl_Aggregate_Sales_To_Gold",
+	"properties": {
+		"activities": [
+			{
+				"name": "Data Flow Silver To Gold",
+				"type": "ExecuteDataFlow",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"dataflow": {
+						"referenceName": "Dataflow Cleaned Silver to Gold",
+						"type": "DataFlowReference"
+					},
+					"staging": {
+						"linkedService": {
+							"referenceName": "ls_for_staging",
+							"type": "LinkedServiceReference"
+						},
+						"folderPath": "staging"
+					},
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
+					},
+					"traceLevel": "Fine"
+				}
+			}
+		],
+		"folder": {
+			"name": "Pipelines with Triggers"
+		},
+		"annotations": [],
+		"lastPublishTime": "2025-07-15T20:45:54Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
