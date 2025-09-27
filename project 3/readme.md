@@ -1,16 +1,16 @@
 <img width="1511" height="717" alt="image" src="https://github.com/user-attachments/assets/87b10ee4-ea7a-4142-8a12-2f3476fcdbb0" />
 
-Azure Data Engineering Project: Multi-Source Data Pipeline with Medallion Architecture
-Project Overview
+**Azure Data Engineering Project:** Multi-Source Data Pipeline with Medallion Architecture
+**Project Overview**
 This project implements a robust data engineering pipeline on Azure that ingests data from two different sources (Web API and SQL Database), processes it using the Medallion Architecture, and delivers curated data for Power BI visualization and KPI insights.
 
-Architecture & Design
-Data Sources
+**Architecture & Design**
+**Data Sources**
 Web API: Real-time data ingestion from external REST API
 
 SQL Database: Structured data extraction from Azure SQL Database
 
-Medallion Architecture Implementation
+**Medallion Architecture Implementation**
 Bronze Layer (Raw Data)
 Raw data ingestion from both sources
 
@@ -36,20 +36,20 @@ Delta table format with optimized partitioning
 
 Ready for consumption by BI tools
 
-Technology Stack
-Azure Databricks: Data processing and transformation
+**Technology Stack**
+**Azure Databricks:** Data processing and transformation
 
-Delta Lake: Storage format for all layers
+**Delta Lake:** Storage format for all layers
 
-Azure Data Factory: Orchestration and scheduling
+**Azure Data Factory:** Orchestration and scheduling
 
-Power BI: Data visualization and KPI dashboards
+**Power BI:** Data visualization and KPI dashboards
 
-Azure SQL Database: Source system
+**Azure SQL Database:** Source system
 
-Web API: External data source
-
-Project Structure
+**Web API: **External data source
+**
+Project Structure**
 text
 project/
 ├── notebooks/
@@ -68,22 +68,22 @@ project/
 │   └── environment_variables.json
 └── documentation/
     └── data_dictionary.md
-Key Features
-Data Ingestion
-Web API: Automated API calls with error handling and retry logic
+**Key Features**
+**Data Ingestion**
+**Web API:** Automated API calls with error handling and retry logic
 
-SQL Database: Incremental data extraction using watermark columns
+**SQL Database:** Incremental data extraction using watermark columns
 
-Data Validation: Schema validation and data quality checks at ingestion
+**Data Validation:** Schema validation and data quality checks at ingestion
 
-Data Processing
-Delta Tables: ACID transactions and time travel capabilities
+**Data Processing**
+**Delta Tables:** ACID transactions and time travel capabilities
 
-Incremental Processing: Efficient updates using MERGE operations
+**Incremental Processing**: Efficient updates using MERGE operations
 
-Data Quality: Automated checks and alerting for data anomalies
+**Data Quality:** Automated checks and alerting for data anomalies
 
-Analytics & Visualization
+**Analytics & Visualization**
 Pre-aggregated Metrics: Business KPIs ready for visualization
 
 Power BI Integration: Direct connection to Databricks SQL tables
